@@ -1,19 +1,18 @@
 Summary:	XCB util-keysyms module
 Summary(pl.UTF-8):	Moduł XCB util-keysyms
 Name:		xcb-util-keysyms
-Version:	0.3.8
+Version:	0.3.9
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	c75bb20e709093580a67eaf263251b50
+# Source0-md5:	64e4aad2d48cd4a92e2da13b9f35bfd2
 URL:		http://xcb.freedesktop.org/XcbUtil/
-BuildRequires:	gperf
 BuildRequires:	libxcb-devel >= 1.4
-BuildRequires:	m4
 BuildRequires:	pkgconfig
 BuildRequires:	xcb-proto >= 1.6
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.8
+Requires:	libxcb >= 1.4
 Conflicts:	xcb-util < 0.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,7 +36,8 @@ udostępniają także kod kliencki nie będący ściśle częścią protokołu X
 ale tradycyjnie dostarczany przez Xlib.
 
 Moduł XCB util-keysyms udostępnia następującą biliotekę:
-- keysyms: standardowe stałe i konwersje klawiszy X z/do kodów klawiszy.
+- keysyms: standardowe stałe i konwersje klawiszy X z/do kodów
+klawiszy.
 
 %package devel
 Summary:	Header files for XCB util-keysyms library
