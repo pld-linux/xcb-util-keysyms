@@ -1,12 +1,12 @@
 Summary:	XCB util-keysyms module
 Summary(pl.UTF-8):	Moduł XCB util-keysyms
 Name:		xcb-util-keysyms
-Version:	0.3.9
+Version:	0.4.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	64e4aad2d48cd4a92e2da13b9f35bfd2
+# Source0-md5:	1022293083eec9e62d5659261c29e367
 URL:		http://xcb.freedesktop.org/XcbUtil/
 BuildRequires:	libxcb-devel >= 1.4
 BuildRequires:	pkgconfig
