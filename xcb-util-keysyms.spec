@@ -1,17 +1,19 @@
 Summary:	XCB util-keysyms module
 Summary(pl.UTF-8):	Moduł XCB util-keysyms
 Name:		xcb-util-keysyms
-Version:	0.4.0
-Release:	2
+Version:	0.4.1
+Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	1022293083eec9e62d5659261c29e367
-URL:		http://xcb.freedesktop.org/XcbUtil/
+Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.xz
+# Source0-md5:	fbdc05f86f72f287ed71b162f1a9725a
+URL:		https://xcb.freedesktop.org/XcbUtil/
 BuildRequires:	libxcb-devel >= 1.4
 BuildRequires:	pkgconfig
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xcb-proto >= 1.6
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.8
+BuildRequires:	xz
 Requires:	libxcb >= 1.4
 Conflicts:	xcb-util < 0.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -79,6 +81,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libxcb-keysyms.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -87,14 +92,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README
+%doc ChangeLog NEWS README.md
 %attr(755,root,root) %{_libdir}/libxcb-keysyms.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxcb-keysyms.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libxcb-keysyms.so
-%{_libdir}/libxcb-keysyms.la
 %{_includedir}/xcb/xcb_keysyms.h
 %{_pkgconfigdir}/xcb-keysyms.pc
 
